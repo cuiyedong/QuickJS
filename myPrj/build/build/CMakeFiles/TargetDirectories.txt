@@ -1,0 +1,3 @@
+/home/cuiyedong/workspace/QJS/QuickJS/myPrj/build/build/CMakeFiles/qjsMain.dir
+/home/cuiyedong/workspace/QJS/QuickJS/myPrj/build/build/CMakeFiles/edit_cache.dir
+/home/cuiyedong/workspace/QJS/QuickJS/myPrj/build/build/CMakeFiles/rebuild_cache.dir
