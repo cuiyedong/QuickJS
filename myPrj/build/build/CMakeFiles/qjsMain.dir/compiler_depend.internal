@@ -347,6 +347,7 @@ CMakeFiles/qjsMain.dir/home/cuiyedong/workspace/QJS/QuickJS/myPrj/src/main.c.o
  /usr/include/stdint.h
  /usr/include/x86_64-linux-gnu/bits/wchar.h
  /usr/include/x86_64-linux-gnu/bits/stdint-uintn.h
+ /usr/lib/gcc/x86_64-linux-gnu/9/include/stdbool.h
 
 CMakeFiles/qjsMain.dir/home/cuiyedong/workspace/QJS/QuickJS/quickjs-libc.c.o
  /home/cuiyedong/workspace/QJS/QuickJS/quickjs-libc.c
@@ -613,6 +614,7 @@ CMakeFiles/qjsMain.dir/home/cuiyedong/workspace/QJS/QuickJS/quickjs.c.o
  /home/cuiyedong/workspace/QJS/QuickJS/quickjs.h
  /home/cuiyedong/workspace/QJS/QuickJS/libregexp.h
  /home/cuiyedong/workspace/QJS/QuickJS/libunicode.h
+ /home/cuiyedong/workspace/QJS/QuickJS/libbf.h
  /usr/include/pthread.h
  /usr/include/sched.h
  /usr/include/x86_64-linux-gnu/bits/sched.h
