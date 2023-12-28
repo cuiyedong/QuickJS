@@ -1,15 +1,28 @@
-/* File generated automatically by the QuickJS compiler. */
+/***
+ * 1. 支持字节码的加载、运行
+ * 2. 支持.js文件的加载、运行
+ * 3. 支持bin文件的生成、加载、运行
+ *
+ * TODO:
+ * 1. .js call cModule
+ * 2. c callback js func
+ * 3. std loop
+*/
 
 #include "quickjs-libc.h"
 #include <stdbool.h>
+#include "cModule.h"
+#include <string.h>
 
-static js_load_array(JSContext* ctx);
-static js_load_jsFile(JSContext* ctx);
-void js_load_bin(JSContext* ctx);
+static void js_load_array(JSContext* ctx);
+static void  js_load_jsFile(JSContext* ctx);
+static void js_load_bin(JSContext* ctx);
+static int eval_buf(JSContext *ctx, const void *buf, int buf_len,
+                    const char *filename, int eval_flags);
 
 static JSContext *JS_NewCustomContext(JSRuntime *rt)
 {
-    printf("start of qjs\n");
+    printf("======  start  ======\n");
     JSContext *ctx = JS_NewContextRaw(rt);
     if (!ctx)
         return NULL;
@@ -24,6 +37,18 @@ static JSContext *JS_NewCustomContext(JSRuntime *rt)
     JS_AddIntrinsicTypedArrays(ctx);
     JS_AddIntrinsicPromise(ctx);
     JS_AddIntrinsicBigInt(ctx);
+
+    js_init_module_std(ctx, "std");
+    js_init_module_os(ctx, "os");
+    js_init_module_mmath(ctx, "mmath");
+
+    const char *str = "import * as std from 'std';\n"
+                "import * as os from 'os';\n"
+                "import * as mmath from 'mmath';\n"
+                "globalThis.std = std;\n"
+                "globalThis.os = os;\n"
+                "globalThis.mmath = mmath;\n";
+    eval_buf(ctx, str, strlen(str), "<input>", JS_EVAL_TYPE_MODULE);
     return ctx;
 }
 
@@ -38,7 +63,7 @@ int main(int argc, char **argv)
     ctx = JS_NewCustomContext(rt);
     js_std_add_helpers(ctx, argc, argv);
 
-    // qjsc -c 生成的binary数组 加载
+    // qjsc -c 字节码
     js_load_array(ctx);
 
     // 运行.js文件
@@ -59,7 +84,7 @@ int main(int argc, char **argv)
  *  step 1:qjsc -c myPrj/JSBinFiles/helloworld.js -o myPrj/JSBinFiles/bin.c
  *  step 2:js_std_eval_binary
  */
-static js_load_array(JSContext* ctx)
+static void js_load_array(JSContext* ctx)
 {
     const uint32_t qjsc_fib_module_size = 138;
 
@@ -168,7 +193,7 @@ static int eval_file(JSContext *ctx, const char *filename, int module)
     return ret;
 }
 
-static js_load_jsFile(JSContext* ctx)
+static void js_load_jsFile(JSContext* ctx)
 {
     printf("%s\n", __func__);
     eval_file(ctx, "../../JSBinFiles/helloworld.js", 0);
@@ -203,7 +228,7 @@ int load_binary_file(JSContext *ctx, const char *filename)
     return 0;
 }
 
-void js_load_bin(JSContext* ctx)
+static void js_load_bin(JSContext* ctx)
 {
     printf("%s\n", __func__);
     load_binary_file(ctx, "../../JSBinFiles/bin.bin");

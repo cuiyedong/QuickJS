@@ -18,6 +18,7 @@ add_definitions(-DCONFIG_VERSION=\"2020-07-05\")
 add_definitions(-DCONFIG_BIGNUM)
 
 list(APPEND PROJECT_SRC ${ROOT_DIR}/src/main.c)
+list(APPEND PROJECT_SRC ${ROOT_DIR}/src/cModule.c)
 list(APPEND PROJECT_SRC ${ROOT_DIR}/../cutils.c)
 list(APPEND PROJECT_SRC ${ROOT_DIR}/../libregexp.c)
 list(APPEND PROJECT_SRC ${ROOT_DIR}/../libunicode.c)

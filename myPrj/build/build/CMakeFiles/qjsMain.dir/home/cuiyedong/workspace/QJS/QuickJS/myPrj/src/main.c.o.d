@@ -56,4 +56,6 @@ CMakeFiles/qjsMain.dir/home/cuiyedong/workspace/QJS/QuickJS/myPrj/src/main.c.o: 
  /usr/lib/gcc/x86_64-linux-gnu/9/include/stdint.h /usr/include/stdint.h \
  /usr/include/x86_64-linux-gnu/bits/wchar.h \
  /usr/include/x86_64-linux-gnu/bits/stdint-uintn.h \
- /usr/lib/gcc/x86_64-linux-gnu/9/include/stdbool.h
+ /usr/lib/gcc/x86_64-linux-gnu/9/include/stdbool.h \
+ /home/cuiyedong/workspace/QJS/QuickJS/myPrj/src/cModule.h \
+ /usr/include/string.h /usr/include/strings.h

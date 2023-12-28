@@ -7,6 +7,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/qjsMain.dir/home/cuiyedong/workspace/QJS/QuickJS/libregexp.c.o.d"
   "CMakeFiles/qjsMain.dir/home/cuiyedong/workspace/QJS/QuickJS/libunicode.c.o"
   "CMakeFiles/qjsMain.dir/home/cuiyedong/workspace/QJS/QuickJS/libunicode.c.o.d"
+  "CMakeFiles/qjsMain.dir/home/cuiyedong/workspace/QJS/QuickJS/myPrj/src/cModule.c.o"
+  "CMakeFiles/qjsMain.dir/home/cuiyedong/workspace/QJS/QuickJS/myPrj/src/cModule.c.o.d"
   "CMakeFiles/qjsMain.dir/home/cuiyedong/workspace/QJS/QuickJS/myPrj/src/main.c.o"
   "CMakeFiles/qjsMain.dir/home/cuiyedong/workspace/QJS/QuickJS/myPrj/src/main.c.o.d"
   "CMakeFiles/qjsMain.dir/home/cuiyedong/workspace/QJS/QuickJS/quickjs-libc.c.o"

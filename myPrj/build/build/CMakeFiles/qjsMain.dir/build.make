@@ -83,10 +83,24 @@ CMakeFiles/qjsMain.dir/home/cuiyedong/workspace/QJS/QuickJS/myPrj/src/main.c.s: 
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/qjsMain.dir/home/cuiyedong/workspace/QJS/QuickJS/myPrj/src/main.c.s"
 	gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/cuiyedong/workspace/QJS/QuickJS/myPrj/src/main.c -o CMakeFiles/qjsMain.dir/home/cuiyedong/workspace/QJS/QuickJS/myPrj/src/main.c.s
 
+CMakeFiles/qjsMain.dir/home/cuiyedong/workspace/QJS/QuickJS/myPrj/src/cModule.c.o: CMakeFiles/qjsMain.dir/flags.make
+CMakeFiles/qjsMain.dir/home/cuiyedong/workspace/QJS/QuickJS/myPrj/src/cModule.c.o: /home/cuiyedong/workspace/QJS/QuickJS/myPrj/src/cModule.c
+CMakeFiles/qjsMain.dir/home/cuiyedong/workspace/QJS/QuickJS/myPrj/src/cModule.c.o: CMakeFiles/qjsMain.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/cuiyedong/workspace/QJS/QuickJS/myPrj/build/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object CMakeFiles/qjsMain.dir/home/cuiyedong/workspace/QJS/QuickJS/myPrj/src/cModule.c.o"
+	gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/qjsMain.dir/home/cuiyedong/workspace/QJS/QuickJS/myPrj/src/cModule.c.o -MF CMakeFiles/qjsMain.dir/home/cuiyedong/workspace/QJS/QuickJS/myPrj/src/cModule.c.o.d -o CMakeFiles/qjsMain.dir/home/cuiyedong/workspace/QJS/QuickJS/myPrj/src/cModule.c.o -c /home/cuiyedong/workspace/QJS/QuickJS/myPrj/src/cModule.c
+
+CMakeFiles/qjsMain.dir/home/cuiyedong/workspace/QJS/QuickJS/myPrj/src/cModule.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/qjsMain.dir/home/cuiyedong/workspace/QJS/QuickJS/myPrj/src/cModule.c.i"
+	gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/cuiyedong/workspace/QJS/QuickJS/myPrj/src/cModule.c > CMakeFiles/qjsMain.dir/home/cuiyedong/workspace/QJS/QuickJS/myPrj/src/cModule.c.i
+
+CMakeFiles/qjsMain.dir/home/cuiyedong/workspace/QJS/QuickJS/myPrj/src/cModule.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/qjsMain.dir/home/cuiyedong/workspace/QJS/QuickJS/myPrj/src/cModule.c.s"
+	gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/cuiyedong/workspace/QJS/QuickJS/myPrj/src/cModule.c -o CMakeFiles/qjsMain.dir/home/cuiyedong/workspace/QJS/QuickJS/myPrj/src/cModule.c.s
+
 CMakeFiles/qjsMain.dir/home/cuiyedong/workspace/QJS/QuickJS/cutils.c.o: CMakeFiles/qjsMain.dir/flags.make
 CMakeFiles/qjsMain.dir/home/cuiyedong/workspace/QJS/QuickJS/cutils.c.o: /home/cuiyedong/workspace/QJS/QuickJS/cutils.c
 CMakeFiles/qjsMain.dir/home/cuiyedong/workspace/QJS/QuickJS/cutils.c.o: CMakeFiles/qjsMain.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/cuiyedong/workspace/QJS/QuickJS/myPrj/build/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object CMakeFiles/qjsMain.dir/home/cuiyedong/workspace/QJS/QuickJS/cutils.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/cuiyedong/workspace/QJS/QuickJS/myPrj/build/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building C object CMakeFiles/qjsMain.dir/home/cuiyedong/workspace/QJS/QuickJS/cutils.c.o"
 	gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/qjsMain.dir/home/cuiyedong/workspace/QJS/QuickJS/cutils.c.o -MF CMakeFiles/qjsMain.dir/home/cuiyedong/workspace/QJS/QuickJS/cutils.c.o.d -o CMakeFiles/qjsMain.dir/home/cuiyedong/workspace/QJS/QuickJS/cutils.c.o -c /home/cuiyedong/workspace/QJS/QuickJS/cutils.c
 
 CMakeFiles/qjsMain.dir/home/cuiyedong/workspace/QJS/QuickJS/cutils.c.i: cmake_force
@@ -100,7 +114,7 @@ CMakeFiles/qjsMain.dir/home/cuiyedong/workspace/QJS/QuickJS/cutils.c.s: cmake_fo
 CMakeFiles/qjsMain.dir/home/cuiyedong/workspace/QJS/QuickJS/libregexp.c.o: CMakeFiles/qjsMain.dir/flags.make
 CMakeFiles/qjsMain.dir/home/cuiyedong/workspace/QJS/QuickJS/libregexp.c.o: /home/cuiyedong/workspace/QJS/QuickJS/libregexp.c
 CMakeFiles/qjsMain.dir/home/cuiyedong/workspace/QJS/QuickJS/libregexp.c.o: CMakeFiles/qjsMain.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/cuiyedong/workspace/QJS/QuickJS/myPrj/build/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building C object CMakeFiles/qjsMain.dir/home/cuiyedong/workspace/QJS/QuickJS/libregexp.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/cuiyedong/workspace/QJS/QuickJS/myPrj/build/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building C object CMakeFiles/qjsMain.dir/home/cuiyedong/workspace/QJS/QuickJS/libregexp.c.o"
 	gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/qjsMain.dir/home/cuiyedong/workspace/QJS/QuickJS/libregexp.c.o -MF CMakeFiles/qjsMain.dir/home/cuiyedong/workspace/QJS/QuickJS/libregexp.c.o.d -o CMakeFiles/qjsMain.dir/home/cuiyedong/workspace/QJS/QuickJS/libregexp.c.o -c /home/cuiyedong/workspace/QJS/QuickJS/libregexp.c
 
 CMakeFiles/qjsMain.dir/home/cuiyedong/workspace/QJS/QuickJS/libregexp.c.i: cmake_force
@@ -114,7 +128,7 @@ CMakeFiles/qjsMain.dir/home/cuiyedong/workspace/QJS/QuickJS/libregexp.c.s: cmake
 CMakeFiles/qjsMain.dir/home/cuiyedong/workspace/QJS/QuickJS/libunicode.c.o: CMakeFiles/qjsMain.dir/flags.make
 CMakeFiles/qjsMain.dir/home/cuiyedong/workspace/QJS/QuickJS/libunicode.c.o: /home/cuiyedong/workspace/QJS/QuickJS/libunicode.c
 CMakeFiles/qjsMain.dir/home/cuiyedong/workspace/QJS/QuickJS/libunicode.c.o: CMakeFiles/qjsMain.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/cuiyedong/workspace/QJS/QuickJS/myPrj/build/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building C object CMakeFiles/qjsMain.dir/home/cuiyedong/workspace/QJS/QuickJS/libunicode.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/cuiyedong/workspace/QJS/QuickJS/myPrj/build/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building C object CMakeFiles/qjsMain.dir/home/cuiyedong/workspace/QJS/QuickJS/libunicode.c.o"
 	gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/qjsMain.dir/home/cuiyedong/workspace/QJS/QuickJS/libunicode.c.o -MF CMakeFiles/qjsMain.dir/home/cuiyedong/workspace/QJS/QuickJS/libunicode.c.o.d -o CMakeFiles/qjsMain.dir/home/cuiyedong/workspace/QJS/QuickJS/libunicode.c.o -c /home/cuiyedong/workspace/QJS/QuickJS/libunicode.c
 
 CMakeFiles/qjsMain.dir/home/cuiyedong/workspace/QJS/QuickJS/libunicode.c.i: cmake_force
@@ -128,7 +142,7 @@ CMakeFiles/qjsMain.dir/home/cuiyedong/workspace/QJS/QuickJS/libunicode.c.s: cmak
 CMakeFiles/qjsMain.dir/home/cuiyedong/workspace/QJS/QuickJS/quickjs.c.o: CMakeFiles/qjsMain.dir/flags.make
 CMakeFiles/qjsMain.dir/home/cuiyedong/workspace/QJS/QuickJS/quickjs.c.o: /home/cuiyedong/workspace/QJS/QuickJS/quickjs.c
 CMakeFiles/qjsMain.dir/home/cuiyedong/workspace/QJS/QuickJS/quickjs.c.o: CMakeFiles/qjsMain.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/cuiyedong/workspace/QJS/QuickJS/myPrj/build/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building C object CMakeFiles/qjsMain.dir/home/cuiyedong/workspace/QJS/QuickJS/quickjs.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/cuiyedong/workspace/QJS/QuickJS/myPrj/build/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building C object CMakeFiles/qjsMain.dir/home/cuiyedong/workspace/QJS/QuickJS/quickjs.c.o"
 	gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/qjsMain.dir/home/cuiyedong/workspace/QJS/QuickJS/quickjs.c.o -MF CMakeFiles/qjsMain.dir/home/cuiyedong/workspace/QJS/QuickJS/quickjs.c.o.d -o CMakeFiles/qjsMain.dir/home/cuiyedong/workspace/QJS/QuickJS/quickjs.c.o -c /home/cuiyedong/workspace/QJS/QuickJS/quickjs.c
 
 CMakeFiles/qjsMain.dir/home/cuiyedong/workspace/QJS/QuickJS/quickjs.c.i: cmake_force
@@ -142,7 +156,7 @@ CMakeFiles/qjsMain.dir/home/cuiyedong/workspace/QJS/QuickJS/quickjs.c.s: cmake_f
 CMakeFiles/qjsMain.dir/home/cuiyedong/workspace/QJS/QuickJS/quickjs-libc.c.o: CMakeFiles/qjsMain.dir/flags.make
 CMakeFiles/qjsMain.dir/home/cuiyedong/workspace/QJS/QuickJS/quickjs-libc.c.o: /home/cuiyedong/workspace/QJS/QuickJS/quickjs-libc.c
 CMakeFiles/qjsMain.dir/home/cuiyedong/workspace/QJS/QuickJS/quickjs-libc.c.o: CMakeFiles/qjsMain.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/cuiyedong/workspace/QJS/QuickJS/myPrj/build/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building C object CMakeFiles/qjsMain.dir/home/cuiyedong/workspace/QJS/QuickJS/quickjs-libc.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/cuiyedong/workspace/QJS/QuickJS/myPrj/build/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building C object CMakeFiles/qjsMain.dir/home/cuiyedong/workspace/QJS/QuickJS/quickjs-libc.c.o"
 	gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/qjsMain.dir/home/cuiyedong/workspace/QJS/QuickJS/quickjs-libc.c.o -MF CMakeFiles/qjsMain.dir/home/cuiyedong/workspace/QJS/QuickJS/quickjs-libc.c.o.d -o CMakeFiles/qjsMain.dir/home/cuiyedong/workspace/QJS/QuickJS/quickjs-libc.c.o -c /home/cuiyedong/workspace/QJS/QuickJS/quickjs-libc.c
 
 CMakeFiles/qjsMain.dir/home/cuiyedong/workspace/QJS/QuickJS/quickjs-libc.c.i: cmake_force
@@ -156,7 +170,7 @@ CMakeFiles/qjsMain.dir/home/cuiyedong/workspace/QJS/QuickJS/quickjs-libc.c.s: cm
 CMakeFiles/qjsMain.dir/home/cuiyedong/workspace/QJS/QuickJS/libbf.c.o: CMakeFiles/qjsMain.dir/flags.make
 CMakeFiles/qjsMain.dir/home/cuiyedong/workspace/QJS/QuickJS/libbf.c.o: /home/cuiyedong/workspace/QJS/QuickJS/libbf.c
 CMakeFiles/qjsMain.dir/home/cuiyedong/workspace/QJS/QuickJS/libbf.c.o: CMakeFiles/qjsMain.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/cuiyedong/workspace/QJS/QuickJS/myPrj/build/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building C object CMakeFiles/qjsMain.dir/home/cuiyedong/workspace/QJS/QuickJS/libbf.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/cuiyedong/workspace/QJS/QuickJS/myPrj/build/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building C object CMakeFiles/qjsMain.dir/home/cuiyedong/workspace/QJS/QuickJS/libbf.c.o"
 	gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/qjsMain.dir/home/cuiyedong/workspace/QJS/QuickJS/libbf.c.o -MF CMakeFiles/qjsMain.dir/home/cuiyedong/workspace/QJS/QuickJS/libbf.c.o.d -o CMakeFiles/qjsMain.dir/home/cuiyedong/workspace/QJS/QuickJS/libbf.c.o -c /home/cuiyedong/workspace/QJS/QuickJS/libbf.c
 
 CMakeFiles/qjsMain.dir/home/cuiyedong/workspace/QJS/QuickJS/libbf.c.i: cmake_force
@@ -170,6 +184,7 @@ CMakeFiles/qjsMain.dir/home/cuiyedong/workspace/QJS/QuickJS/libbf.c.s: cmake_for
 # Object files for target qjsMain
 qjsMain_OBJECTS = \
 "CMakeFiles/qjsMain.dir/home/cuiyedong/workspace/QJS/QuickJS/myPrj/src/main.c.o" \
+"CMakeFiles/qjsMain.dir/home/cuiyedong/workspace/QJS/QuickJS/myPrj/src/cModule.c.o" \
 "CMakeFiles/qjsMain.dir/home/cuiyedong/workspace/QJS/QuickJS/cutils.c.o" \
 "CMakeFiles/qjsMain.dir/home/cuiyedong/workspace/QJS/QuickJS/libregexp.c.o" \
 "CMakeFiles/qjsMain.dir/home/cuiyedong/workspace/QJS/QuickJS/libunicode.c.o" \
@@ -181,6 +196,7 @@ qjsMain_OBJECTS = \
 qjsMain_EXTERNAL_OBJECTS =
 
 qjsMain: CMakeFiles/qjsMain.dir/home/cuiyedong/workspace/QJS/QuickJS/myPrj/src/main.c.o
+qjsMain: CMakeFiles/qjsMain.dir/home/cuiyedong/workspace/QJS/QuickJS/myPrj/src/cModule.c.o
 qjsMain: CMakeFiles/qjsMain.dir/home/cuiyedong/workspace/QJS/QuickJS/cutils.c.o
 qjsMain: CMakeFiles/qjsMain.dir/home/cuiyedong/workspace/QJS/QuickJS/libregexp.c.o
 qjsMain: CMakeFiles/qjsMain.dir/home/cuiyedong/workspace/QJS/QuickJS/libunicode.c.o
@@ -189,7 +205,7 @@ qjsMain: CMakeFiles/qjsMain.dir/home/cuiyedong/workspace/QJS/QuickJS/quickjs-lib
 qjsMain: CMakeFiles/qjsMain.dir/home/cuiyedong/workspace/QJS/QuickJS/libbf.c.o
 qjsMain: CMakeFiles/qjsMain.dir/build.make
 qjsMain: CMakeFiles/qjsMain.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/cuiyedong/workspace/QJS/QuickJS/myPrj/build/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Linking C executable qjsMain"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/cuiyedong/workspace/QJS/QuickJS/myPrj/build/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Linking C executable qjsMain"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/qjsMain.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

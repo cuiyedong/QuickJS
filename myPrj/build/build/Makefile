@@ -225,6 +225,30 @@ home/cuiyedong/workspace/QJS/QuickJS/libunicode.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/qjsMain.dir/build.make CMakeFiles/qjsMain.dir/home/cuiyedong/workspace/QJS/QuickJS/libunicode.c.s
 .PHONY : home/cuiyedong/workspace/QJS/QuickJS/libunicode.c.s
 
+home/cuiyedong/workspace/QJS/QuickJS/myPrj/src/cModule.o: home/cuiyedong/workspace/QJS/QuickJS/myPrj/src/cModule.c.o
+.PHONY : home/cuiyedong/workspace/QJS/QuickJS/myPrj/src/cModule.o
+
+# target to build an object file
+home/cuiyedong/workspace/QJS/QuickJS/myPrj/src/cModule.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/qjsMain.dir/build.make CMakeFiles/qjsMain.dir/home/cuiyedong/workspace/QJS/QuickJS/myPrj/src/cModule.c.o
+.PHONY : home/cuiyedong/workspace/QJS/QuickJS/myPrj/src/cModule.c.o
+
+home/cuiyedong/workspace/QJS/QuickJS/myPrj/src/cModule.i: home/cuiyedong/workspace/QJS/QuickJS/myPrj/src/cModule.c.i
+.PHONY : home/cuiyedong/workspace/QJS/QuickJS/myPrj/src/cModule.i
+
+# target to preprocess a source file
+home/cuiyedong/workspace/QJS/QuickJS/myPrj/src/cModule.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/qjsMain.dir/build.make CMakeFiles/qjsMain.dir/home/cuiyedong/workspace/QJS/QuickJS/myPrj/src/cModule.c.i
+.PHONY : home/cuiyedong/workspace/QJS/QuickJS/myPrj/src/cModule.c.i
+
+home/cuiyedong/workspace/QJS/QuickJS/myPrj/src/cModule.s: home/cuiyedong/workspace/QJS/QuickJS/myPrj/src/cModule.c.s
+.PHONY : home/cuiyedong/workspace/QJS/QuickJS/myPrj/src/cModule.s
+
+# target to generate assembly for a file
+home/cuiyedong/workspace/QJS/QuickJS/myPrj/src/cModule.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/qjsMain.dir/build.make CMakeFiles/qjsMain.dir/home/cuiyedong/workspace/QJS/QuickJS/myPrj/src/cModule.c.s
+.PHONY : home/cuiyedong/workspace/QJS/QuickJS/myPrj/src/cModule.c.s
+
 home/cuiyedong/workspace/QJS/QuickJS/myPrj/src/main.o: home/cuiyedong/workspace/QJS/QuickJS/myPrj/src/main.c.o
 .PHONY : home/cuiyedong/workspace/QJS/QuickJS/myPrj/src/main.o
 
@@ -318,6 +342,9 @@ help:
 	@echo "... home/cuiyedong/workspace/QJS/QuickJS/libunicode.o"
 	@echo "... home/cuiyedong/workspace/QJS/QuickJS/libunicode.i"
 	@echo "... home/cuiyedong/workspace/QJS/QuickJS/libunicode.s"
+	@echo "... home/cuiyedong/workspace/QJS/QuickJS/myPrj/src/cModule.o"
+	@echo "... home/cuiyedong/workspace/QJS/QuickJS/myPrj/src/cModule.i"
+	@echo "... home/cuiyedong/workspace/QJS/QuickJS/myPrj/src/cModule.s"
 	@echo "... home/cuiyedong/workspace/QJS/QuickJS/myPrj/src/main.o"
 	@echo "... home/cuiyedong/workspace/QJS/QuickJS/myPrj/src/main.i"
 	@echo "... home/cuiyedong/workspace/QJS/QuickJS/myPrj/src/main.s"
