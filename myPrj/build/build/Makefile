@@ -225,6 +225,78 @@ home/cuiyedong/workspace/QJS/QuickJS/libunicode.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/qjsMain.dir/build.make CMakeFiles/qjsMain.dir/home/cuiyedong/workspace/QJS/QuickJS/libunicode.c.s
 .PHONY : home/cuiyedong/workspace/QJS/QuickJS/libunicode.c.s
 
+home/cuiyedong/workspace/QJS/QuickJS/myPrj/main.o: home/cuiyedong/workspace/QJS/QuickJS/myPrj/main.c.o
+.PHONY : home/cuiyedong/workspace/QJS/QuickJS/myPrj/main.o
+
+# target to build an object file
+home/cuiyedong/workspace/QJS/QuickJS/myPrj/main.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/qjsMain.dir/build.make CMakeFiles/qjsMain.dir/home/cuiyedong/workspace/QJS/QuickJS/myPrj/main.c.o
+.PHONY : home/cuiyedong/workspace/QJS/QuickJS/myPrj/main.c.o
+
+home/cuiyedong/workspace/QJS/QuickJS/myPrj/main.i: home/cuiyedong/workspace/QJS/QuickJS/myPrj/main.c.i
+.PHONY : home/cuiyedong/workspace/QJS/QuickJS/myPrj/main.i
+
+# target to preprocess a source file
+home/cuiyedong/workspace/QJS/QuickJS/myPrj/main.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/qjsMain.dir/build.make CMakeFiles/qjsMain.dir/home/cuiyedong/workspace/QJS/QuickJS/myPrj/main.c.i
+.PHONY : home/cuiyedong/workspace/QJS/QuickJS/myPrj/main.c.i
+
+home/cuiyedong/workspace/QJS/QuickJS/myPrj/main.s: home/cuiyedong/workspace/QJS/QuickJS/myPrj/main.c.s
+.PHONY : home/cuiyedong/workspace/QJS/QuickJS/myPrj/main.s
+
+# target to generate assembly for a file
+home/cuiyedong/workspace/QJS/QuickJS/myPrj/main.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/qjsMain.dir/build.make CMakeFiles/qjsMain.dir/home/cuiyedong/workspace/QJS/QuickJS/myPrj/main.c.s
+.PHONY : home/cuiyedong/workspace/QJS/QuickJS/myPrj/main.c.s
+
+home/cuiyedong/workspace/QJS/QuickJS/myPrj/runtime/jsEval.o: home/cuiyedong/workspace/QJS/QuickJS/myPrj/runtime/jsEval.c.o
+.PHONY : home/cuiyedong/workspace/QJS/QuickJS/myPrj/runtime/jsEval.o
+
+# target to build an object file
+home/cuiyedong/workspace/QJS/QuickJS/myPrj/runtime/jsEval.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/qjsMain.dir/build.make CMakeFiles/qjsMain.dir/home/cuiyedong/workspace/QJS/QuickJS/myPrj/runtime/jsEval.c.o
+.PHONY : home/cuiyedong/workspace/QJS/QuickJS/myPrj/runtime/jsEval.c.o
+
+home/cuiyedong/workspace/QJS/QuickJS/myPrj/runtime/jsEval.i: home/cuiyedong/workspace/QJS/QuickJS/myPrj/runtime/jsEval.c.i
+.PHONY : home/cuiyedong/workspace/QJS/QuickJS/myPrj/runtime/jsEval.i
+
+# target to preprocess a source file
+home/cuiyedong/workspace/QJS/QuickJS/myPrj/runtime/jsEval.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/qjsMain.dir/build.make CMakeFiles/qjsMain.dir/home/cuiyedong/workspace/QJS/QuickJS/myPrj/runtime/jsEval.c.i
+.PHONY : home/cuiyedong/workspace/QJS/QuickJS/myPrj/runtime/jsEval.c.i
+
+home/cuiyedong/workspace/QJS/QuickJS/myPrj/runtime/jsEval.s: home/cuiyedong/workspace/QJS/QuickJS/myPrj/runtime/jsEval.c.s
+.PHONY : home/cuiyedong/workspace/QJS/QuickJS/myPrj/runtime/jsEval.s
+
+# target to generate assembly for a file
+home/cuiyedong/workspace/QJS/QuickJS/myPrj/runtime/jsEval.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/qjsMain.dir/build.make CMakeFiles/qjsMain.dir/home/cuiyedong/workspace/QJS/QuickJS/myPrj/runtime/jsEval.c.s
+.PHONY : home/cuiyedong/workspace/QJS/QuickJS/myPrj/runtime/jsEval.c.s
+
+home/cuiyedong/workspace/QJS/QuickJS/myPrj/runtime/rtInit.o: home/cuiyedong/workspace/QJS/QuickJS/myPrj/runtime/rtInit.c.o
+.PHONY : home/cuiyedong/workspace/QJS/QuickJS/myPrj/runtime/rtInit.o
+
+# target to build an object file
+home/cuiyedong/workspace/QJS/QuickJS/myPrj/runtime/rtInit.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/qjsMain.dir/build.make CMakeFiles/qjsMain.dir/home/cuiyedong/workspace/QJS/QuickJS/myPrj/runtime/rtInit.c.o
+.PHONY : home/cuiyedong/workspace/QJS/QuickJS/myPrj/runtime/rtInit.c.o
+
+home/cuiyedong/workspace/QJS/QuickJS/myPrj/runtime/rtInit.i: home/cuiyedong/workspace/QJS/QuickJS/myPrj/runtime/rtInit.c.i
+.PHONY : home/cuiyedong/workspace/QJS/QuickJS/myPrj/runtime/rtInit.i
+
+# target to preprocess a source file
+home/cuiyedong/workspace/QJS/QuickJS/myPrj/runtime/rtInit.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/qjsMain.dir/build.make CMakeFiles/qjsMain.dir/home/cuiyedong/workspace/QJS/QuickJS/myPrj/runtime/rtInit.c.i
+.PHONY : home/cuiyedong/workspace/QJS/QuickJS/myPrj/runtime/rtInit.c.i
+
+home/cuiyedong/workspace/QJS/QuickJS/myPrj/runtime/rtInit.s: home/cuiyedong/workspace/QJS/QuickJS/myPrj/runtime/rtInit.c.s
+.PHONY : home/cuiyedong/workspace/QJS/QuickJS/myPrj/runtime/rtInit.s
+
+# target to generate assembly for a file
+home/cuiyedong/workspace/QJS/QuickJS/myPrj/runtime/rtInit.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/qjsMain.dir/build.make CMakeFiles/qjsMain.dir/home/cuiyedong/workspace/QJS/QuickJS/myPrj/runtime/rtInit.c.s
+.PHONY : home/cuiyedong/workspace/QJS/QuickJS/myPrj/runtime/rtInit.c.s
+
 home/cuiyedong/workspace/QJS/QuickJS/myPrj/src/cModule.o: home/cuiyedong/workspace/QJS/QuickJS/myPrj/src/cModule.c.o
 .PHONY : home/cuiyedong/workspace/QJS/QuickJS/myPrj/src/cModule.o
 
@@ -248,30 +320,6 @@ home/cuiyedong/workspace/QJS/QuickJS/myPrj/src/cModule.s: home/cuiyedong/workspa
 home/cuiyedong/workspace/QJS/QuickJS/myPrj/src/cModule.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/qjsMain.dir/build.make CMakeFiles/qjsMain.dir/home/cuiyedong/workspace/QJS/QuickJS/myPrj/src/cModule.c.s
 .PHONY : home/cuiyedong/workspace/QJS/QuickJS/myPrj/src/cModule.c.s
-
-home/cuiyedong/workspace/QJS/QuickJS/myPrj/src/main.o: home/cuiyedong/workspace/QJS/QuickJS/myPrj/src/main.c.o
-.PHONY : home/cuiyedong/workspace/QJS/QuickJS/myPrj/src/main.o
-
-# target to build an object file
-home/cuiyedong/workspace/QJS/QuickJS/myPrj/src/main.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/qjsMain.dir/build.make CMakeFiles/qjsMain.dir/home/cuiyedong/workspace/QJS/QuickJS/myPrj/src/main.c.o
-.PHONY : home/cuiyedong/workspace/QJS/QuickJS/myPrj/src/main.c.o
-
-home/cuiyedong/workspace/QJS/QuickJS/myPrj/src/main.i: home/cuiyedong/workspace/QJS/QuickJS/myPrj/src/main.c.i
-.PHONY : home/cuiyedong/workspace/QJS/QuickJS/myPrj/src/main.i
-
-# target to preprocess a source file
-home/cuiyedong/workspace/QJS/QuickJS/myPrj/src/main.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/qjsMain.dir/build.make CMakeFiles/qjsMain.dir/home/cuiyedong/workspace/QJS/QuickJS/myPrj/src/main.c.i
-.PHONY : home/cuiyedong/workspace/QJS/QuickJS/myPrj/src/main.c.i
-
-home/cuiyedong/workspace/QJS/QuickJS/myPrj/src/main.s: home/cuiyedong/workspace/QJS/QuickJS/myPrj/src/main.c.s
-.PHONY : home/cuiyedong/workspace/QJS/QuickJS/myPrj/src/main.s
-
-# target to generate assembly for a file
-home/cuiyedong/workspace/QJS/QuickJS/myPrj/src/main.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/qjsMain.dir/build.make CMakeFiles/qjsMain.dir/home/cuiyedong/workspace/QJS/QuickJS/myPrj/src/main.c.s
-.PHONY : home/cuiyedong/workspace/QJS/QuickJS/myPrj/src/main.c.s
 
 home/cuiyedong/workspace/QJS/QuickJS/quickjs-libc.o: home/cuiyedong/workspace/QJS/QuickJS/quickjs-libc.c.o
 .PHONY : home/cuiyedong/workspace/QJS/QuickJS/quickjs-libc.o
@@ -342,12 +390,18 @@ help:
 	@echo "... home/cuiyedong/workspace/QJS/QuickJS/libunicode.o"
 	@echo "... home/cuiyedong/workspace/QJS/QuickJS/libunicode.i"
 	@echo "... home/cuiyedong/workspace/QJS/QuickJS/libunicode.s"
+	@echo "... home/cuiyedong/workspace/QJS/QuickJS/myPrj/main.o"
+	@echo "... home/cuiyedong/workspace/QJS/QuickJS/myPrj/main.i"
+	@echo "... home/cuiyedong/workspace/QJS/QuickJS/myPrj/main.s"
+	@echo "... home/cuiyedong/workspace/QJS/QuickJS/myPrj/runtime/jsEval.o"
+	@echo "... home/cuiyedong/workspace/QJS/QuickJS/myPrj/runtime/jsEval.i"
+	@echo "... home/cuiyedong/workspace/QJS/QuickJS/myPrj/runtime/jsEval.s"
+	@echo "... home/cuiyedong/workspace/QJS/QuickJS/myPrj/runtime/rtInit.o"
+	@echo "... home/cuiyedong/workspace/QJS/QuickJS/myPrj/runtime/rtInit.i"
+	@echo "... home/cuiyedong/workspace/QJS/QuickJS/myPrj/runtime/rtInit.s"
 	@echo "... home/cuiyedong/workspace/QJS/QuickJS/myPrj/src/cModule.o"
 	@echo "... home/cuiyedong/workspace/QJS/QuickJS/myPrj/src/cModule.i"
 	@echo "... home/cuiyedong/workspace/QJS/QuickJS/myPrj/src/cModule.s"
-	@echo "... home/cuiyedong/workspace/QJS/QuickJS/myPrj/src/main.o"
-	@echo "... home/cuiyedong/workspace/QJS/QuickJS/myPrj/src/main.i"
-	@echo "... home/cuiyedong/workspace/QJS/QuickJS/myPrj/src/main.s"
 	@echo "... home/cuiyedong/workspace/QJS/QuickJS/quickjs-libc.o"
 	@echo "... home/cuiyedong/workspace/QJS/QuickJS/quickjs-libc.i"
 	@echo "... home/cuiyedong/workspace/QJS/QuickJS/quickjs-libc.s"
