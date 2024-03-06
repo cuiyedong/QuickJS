@@ -64,18 +64,19 @@ int main(int argc, char **argv)
     js_std_add_helpers(ctx, argc, argv);
 
 
-char script[] = R"(
-    import * as std from "std"
-    import * as mmath from "mmath"
+    char script[] = R"(
+        import * as std from "std"
+        import * as mmath from "mmath"
 
-    std.puts("\x1b[J");
-    console.log("====  generate binary  ====");
-    console.log("Hello World");
-    console.log("4 + 5 = ", mmath.add(4,5))
-  )";
-
-
-  JS_Eval(ctx, script, strlen(script), "<test>", JS_EVAL_TYPE_MODULE);
+        console.log("====  generate binary  ====");
+        console.log("Hello World");
+        console.log("4 + 5 = ", mmath.add(4,5))
+        console.log("R ", mmath.add(4,5))
+        var circle = new mmath.circleA(1, "HI");
+        var r = circle.round(4)
+        console.log(r)
+    )";
+    JS_Eval(ctx, script, strlen(script), "<test>", JS_EVAL_TYPE_MODULE);
 
     // qjsc -c 字节码
     printf("\n>>>>  qjsc 字节码  <<<<\n");
