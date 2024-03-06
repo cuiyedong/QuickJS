@@ -17,7 +17,7 @@ set(CMAKE_C_COMPILER gcc)
 add_definitions(-DCONFIG_VERSION=\"2020-07-05\")
 add_definitions(-DCONFIG_BIGNUM)
 
-list(APPEND PROJECT_SRC ${ROOT_DIR}/src/main.c)
+list(APPEND PROJECT_SRC ${ROOT_DIR}/main.c)
 list(APPEND PROJECT_SRC ${ROOT_DIR}/src/cModule.c)
 list(APPEND PROJECT_SRC ${ROOT_DIR}/../cutils.c)
 list(APPEND PROJECT_SRC ${ROOT_DIR}/../libregexp.c)
@@ -25,6 +25,8 @@ list(APPEND PROJECT_SRC ${ROOT_DIR}/../libunicode.c)
 list(APPEND PROJECT_SRC ${ROOT_DIR}/../quickjs.c)
 list(APPEND PROJECT_SRC ${ROOT_DIR}/../quickjs-libc.c)
 list(APPEND PROJECT_SRC ${ROOT_DIR}/../libbf.c)
+FILE(GLOB SRC_FILES ${ROOT_DIR}/runtime/*.c)
+list(APPEND PROJECT_SRC ${SRC_FILES})
 
 
 list(APPEND PROJECT_INCLUDE ${ROOT_DIR}/../)
