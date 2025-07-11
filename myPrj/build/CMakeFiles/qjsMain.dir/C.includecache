@@ -1,0 +1,38 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+../../cutils.h
+stdlib.h
+-
+inttypes.h
+-
+
+../../quickjs-libc.h
+stdio.h
+-
+stdlib.h
+-
+quickjs.h
+../../quickjs.h
+
+../../quickjs.h
+stdio.h
+-
+stdint.h
+-
+
+/home/cuiyd/workspace/milan_OS5/QuickJS/myPrj/src/cModule.c
+quickjs-libc.h
+/home/cuiyd/workspace/milan_OS5/QuickJS/myPrj/src/quickjs-libc.h
+cutils.h
+/home/cuiyd/workspace/milan_OS5/QuickJS/myPrj/src/cutils.h
+quickjs.h
+/home/cuiyd/workspace/milan_OS5/QuickJS/myPrj/src/quickjs.h
+math.h
+-
+

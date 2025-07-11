@@ -30,20 +30,22 @@ int main(int argc, char **argv)
     JS_SetModuleLoaderFunc(rt, NULL, js_module_loader, NULL);
     ctx = JS_NewCustomContext(rt);
     js_std_add_helpers(ctx, argc, argv);
+    my_class_create(ctx);
 
-    runJsScript(ctx, demoScript);
+    runJsScript(ctx, demoScript);  // 执行 JS 片段
 
-    js_load_array(ctx);
+    js_load_array(ctx);  // 执行字节码
 
-    eval_file(ctx, "../../JSBinFiles/helloworld.js", 0);
+    eval_file(ctx, "../JSBinFiles/helloworld.js", 0);
 
     // 运行bin文件
-    load_binary_file(ctx, "../../JSBinFiles/bin.bin");
+    printf("\n%s  >>>>\n", "run bin文件");
+    load_binary_file(ctx, "../JSBinFiles/bin.bin");
 
 
     js_std_loop(ctx);
     JS_FreeContext(ctx);
-    JS_FreeRuntime(rt);
+    // JS_FreeRuntime(rt);
     return 0;
 }
 

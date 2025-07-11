@@ -5,49 +5,14 @@
 #include "quickjs-libc.h"
 #include "cutils.h"
 #include "quickjs.h"
+#include <math.h>
 
-static JSValue js_my_adder(JSContext *ctx, JSValueConst this_val, int argc, JSValueConst *argv);
-static JSValue js_my_multi(JSContext *ctx, JSValueConst this_val, int argc, JSValueConst *argv);
-static void CircleClassInit(JSContext *ctx, JSModuleDef *m);
-
-static JSClassID CircleClassID;
-
-static const JSCFunctionListEntry js_mmath_funcs[] = {
-    // part1: function 定义
-    JS_CFUNC_DEF("add", 2, js_my_adder),
-    JS_CFUNC_DEF("multi", 2, js_my_multi),
-
-    // part2: prop 定义, mmath.pai, const R
-    JS_PROP_DOUBLE_DEF("pai", 3.14, JS_PROP_CONFIGURABLE),
-
-    // part3: object 定义
-
-};
+#define countof(x) (sizeof(x) / sizeof((x)[0]))
 
 /**
- * @brief cModule create init
- * @details 添加module export清单 function prop object
- */
-static int js_mmath_init(JSContext *ctx, JSModuleDef *m)
-{
-    JS_SetModuleExportList(ctx, m, js_mmath_funcs, countof(js_mmath_funcs));
-    CircleClassInit(ctx, m);
-    return 0;
-}
-
-JSModuleDef *js_init_module_mmath(JSContext *ctx, const char *module_name)
-{
-    JSModuleDef *m;
-    m = JS_NewCModule(ctx, module_name, js_mmath_init);
-    if (!m)
-        return NULL;
-    JS_AddModuleExportList(ctx, m, js_mmath_funcs, countof(js_mmath_funcs));
-
-    return m;
-}
-
-/**
- * @brief part1: cModule 添加方法
+ *  ============================================================
+ *                      module part
+ *  ============================================================
  */
 static JSValue js_my_adder(JSContext *ctx, JSValueConst this_val,
                            int argc, JSValueConst *argv)
@@ -64,110 +29,173 @@ static JSValue js_my_adder(JSContext *ctx, JSValueConst this_val,
     return JS_NewInt32(ctx, a + b);
 }
 
-static JSValue js_my_multi(JSContext *ctx, JSValueConst this_val,
-                           int argc, JSValueConst *argv)
+static const JSCFunctionListEntry js_mmath_funcs[] = {
+    // part1: function 定义
+    JS_CFUNC_DEF("add", 2, js_my_adder),
+
+    // part2: prop 定义, mmath.pai, const R
+    JS_PROP_DOUBLE_DEF("pai", 3.14, JS_PROP_CONFIGURABLE),
+
+    // part3: object 定义
+};
+
+static int js_mmath_init(JSContext *ctx, JSModuleDef *m)
 {
-    int a = 0;
-    int b = 0;
+    JS_SetModuleExportList(ctx, m, js_mmath_funcs, countof(js_mmath_funcs));
+    return 0;
+}
 
-    if (JS_ToInt32(ctx, &a, argv[0]) || JS_ToInt32(ctx, &b, argv[1]))
-    {
-        printf("%s err param\n", __func__);
-        return JS_UNDEFINED;
-    }
+JSModuleDef *js_init_module_mmath(JSContext *ctx, const char *module_name)
+{
+    JSModuleDef *m;
+    m = JS_NewCModule(ctx, module_name, js_mmath_init);
+    if (!m)
+        return NULL;
+    JS_AddModuleExportList(ctx, m, js_mmath_funcs, countof(js_mmath_funcs));
 
-    return JS_NewInt32(ctx, a * b);
+    return m;
 }
 
 /**
- * @brief part1: 类的添加方法
+ * ============================================================
+ *                      class part
+ * ============================================================
  */
-static JSClassDef circle_class_def = {
-    .class_name = "circleA",
-    // .finalizer = JSButtonFinalizer,
-};
 
-typedef struct _circle
+// 不透明指针，绑在object上，js和c能够共享访问
+typedef struct
 {
-    const char *name;
-    uint32_t r;
-} Circle;
+    int x;
+    int y;
+} JSPointData;
 
-/* 计算圆的周长 */
-static JSValue JSCircleRoundFunc(JSContext *ctx, JSValueConst this_val, int argc, JSValueConst *argv)
+// 类的定义,类的唯一ID
+static JSClassID js_point_class_id;
+
+// C 侧定义类的方法实现 js_point_get_xy
+static JSValue js_point_get_xy(JSContext *ctx, JSValueConst this_val, int magic)
 {
-    JSValue ret = JS_UNDEFINED;
-    Circle *circle = (Circle *)JS_GetOpaque2(ctx, this_val, CircleClassID);
-
-    if (circle == NULL)
+    JSPointData *s = JS_GetOpaque2(ctx, this_val, js_point_class_id);
+    if (!s)
         return JS_EXCEPTION;
-    if (argc > 0)
-    {
-        JS_ToUint32(ctx, &circle->r, argv[0]);
-    }
-
-    return JS_NewUint32(ctx, 2 * 3.14 * circle->r);
+    if (magic == 0)
+        return JS_NewInt32(ctx, s->x);
+    else
+        return JS_NewInt32(ctx, s->y);
 }
 
-static JSValue JSCircleGetR(JSContext *ctx, JSValueConst this_val)
+// C 侧定义类的方法实现 js_point_set_xy  magic 用于多个JS方法，C侧同一套实现逻辑，避免重复编写
+static JSValue js_point_set_xy(JSContext *ctx, JSValueConst this_val, JSValue val, int magic)
 {
-    Circle *circle = (Circle *)JS_GetOpaque2(ctx, this_val, CircleClassID);
-    if (circle == NULL)
-    {
+    JSPointData *s = JS_GetOpaque2(ctx, this_val, js_point_class_id);
+    int v;
+    if (!s)
         return JS_EXCEPTION;
-    }
-    return JS_NewUint32(ctx, circle->r);
-}
-static JSValue JSCircleSetR(JSContext *ctx, JSValueConst this_val, JSValueConst val)
-{
-    Circle *circle = (Circle *)JS_GetOpaque2(ctx, this_val, CircleClassID);
-    if (circle == NULL)
-    {
+    if (JS_ToInt32(ctx, &v, val))
         return JS_EXCEPTION;
-    }
-    int v = 0;
-    JS_ToUint32(ctx, &v, val);
-    circle->r = v;
+    if (magic == 0)
+        s->x = v;
+    else
+        s->y = v;
     return JS_UNDEFINED;
 }
 
-static JSValue JSCircleCreate(JSContext *ctx, JSValueConst val, int argc, JSValueConst *argv)
+// C 侧定义类的方法实现 js_point_norm
+static JSValue js_point_norm(JSContext *ctx, JSValueConst this_val,
+                             int argc, JSValueConst *argv)
 {
-  JSValue obj = JS_UNDEFINED;
-  Circle * circle = (Circle*)js_malloc(ctx, sizeof(Circle));
-  if(argc > 1){
-    JS_ToInt32(ctx, &circle->r, argv[0]);
-    circle->name = JS_ToCString(ctx, argv[1]);
-  }else if(argc > 0){
-    JS_ToInt32(ctx, &circle->r, argv[0]);
-  }
-
-  JSValue proto = JS_GetPropertyStr(ctx, val, "prototype");
-  obj = JS_NewObjectProtoClass(ctx, JS_NULL, CircleClassID);
-  JS_SetPrototype(ctx, obj, proto);
-  JS_FreeValue(ctx, proto);
-  JS_SetOpaque(obj, circle);
-  return obj;
+    JSPointData *s = JS_GetOpaque2(ctx, this_val, js_point_class_id);
+    if (!s)
+        return JS_EXCEPTION;
+    return JS_NewFloat64(ctx, sqrt((double)s->x * s->x + (double)s->y * s->y));
 }
 
-static const JSCFunctionListEntry circle_class_funcs[] = {
-    JS_CFUNC_DEF("round", 0, JSCircleRoundFunc),
-    JS_PROP_INT32_DEF("version", 100, JS_PROP_C_W_E),
-    // JS_CGETSET_DEF("name", JSButtonGetName, JSButtonSetName),
-    JS_CGETSET_DEF("r", JSCircleGetR, JSCircleSetR)};
-
-static void CircleClassInit(JSContext *ctx, JSModuleDef *m)
+static void js_point_finalizer(JSRuntime *rt, JSValue val)
 {
-    JS_NewClassID(&CircleClassID);                                     // 分配全局唯一class id
-    JS_NewClass(JS_GetRuntime(ctx), CircleClassID, &circle_class_def); // 新建类，类名和析构
-
-    // 建立class原型 绑定属性、枚举、方法等 然后挂到class中
-    JSValue proto = JS_NewObject(ctx);
-    JS_SetPropertyFunctionList(ctx, proto, circle_class_funcs, countof(circle_class_funcs));
-
-    // 类的构造函数创建并绑定
-    JSValue class = JS_NewCFunction2(ctx, JSCircleCreate, circle_class_def.class_name, 1, JS_CFUNC_constructor, 0);
-    JS_SetConstructor(ctx, class, proto);
-    JS_SetClassProto(ctx, CircleClassID, proto);
-    JS_SetModuleExport(ctx, m, circle_class_def.class_name, class); //设置可导出类
+    JSPointData *s = JS_GetOpaque(val, js_point_class_id);
+    /* Note: 's' can be NULL in case JS_SetOpaque() was not called */
+    js_free_rt(rt, s);
+    printf("%s", __func__);
 }
+
+// 类的定义，包括析构函数
+static JSClassDef js_point_class = {
+    "Point",
+    .finalizer = js_point_finalizer,
+};
+
+// 类的成员和方法
+static const JSCFunctionListEntry js_point_proto_funcs[] = {
+    JS_CGETSET_MAGIC_DEF("x", js_point_get_xy, js_point_set_xy, 0),
+    JS_CGETSET_MAGIC_DEF("y", js_point_get_xy, js_point_set_xy, 1),
+    JS_CFUNC_DEF("norm", 0, js_point_norm),
+};
+
+// 类的构造方法
+static JSValue js_point_ctor(JSContext *ctx,
+                             JSValueConst new_target,
+                             int argc, JSValueConst *argv)
+{
+    JSPointData *s;
+    JSValue obj = JS_UNDEFINED;
+    JSValue proto;
+
+    s = js_mallocz(ctx, sizeof(*s));
+    if (!s)
+        return JS_EXCEPTION;
+    if (JS_ToInt32(ctx, &s->x, argv[0]))
+        goto fail;
+    if (JS_ToInt32(ctx, &s->y, argv[1]))
+        goto fail;
+
+    // 获取class的原型
+    proto = JS_GetClassProto(ctx, js_point_class_id);
+    if (JS_IsException(proto))
+        goto fail;
+
+    // 并以此class为原型建立新的object
+    obj = JS_NewObjectProtoClass(ctx, proto, js_point_class_id);
+    JS_FreeValue(ctx, proto);
+    if (JS_IsException(obj))
+        goto fail;
+    JS_SetOpaque(obj, s);
+
+    return obj;
+fail:
+    js_free(ctx, s);
+    JS_FreeValue(ctx, obj);
+    return JS_EXCEPTION;
+}
+
+static int createClassWithProto(JSContext *ctx)
+{
+    // 只建立一次此object
+    JSValue proto = JS_GetClassProto(ctx, js_point_class_id);
+    if (JS_IsObject(proto))
+    {
+        return 0;
+    }
+
+    /* create the Point class */
+    JS_NewClassID(&js_point_class_id);
+    JS_NewClass(JS_GetRuntime(ctx), js_point_class_id, &js_point_class);
+
+    // 创建一个object并把成员和方法绑定在object上
+    proto = JS_NewObject(ctx);
+    JS_SetPropertyFunctionList(ctx, proto, js_point_proto_funcs, countof(js_point_proto_funcs));
+
+    // 将此object设置为类的原型
+    JS_SetClassProto(ctx, js_point_class_id, proto);
+    return 0;
+}
+
+void my_class_create(JSContext *ctx)
+{
+    createClassWithProto(ctx);
+
+    JSValue global_obj = JS_GetGlobalObject(ctx);
+    JSValue point_class = JS_NewCFunction2(ctx, js_point_ctor, "Point", 2, JS_CFUNC_constructor, 0);
+    JS_SetPropertyStr(ctx, global_obj, "Point", point_class);
+}
+
+
