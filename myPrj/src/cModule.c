@@ -115,7 +115,7 @@ static void js_point_finalizer(JSRuntime *rt, JSValue val)
     JSPointData *s = JS_GetOpaque(val, js_point_class_id);
     /* Note: 's' can be NULL in case JS_SetOpaque() was not called */
     js_free_rt(rt, s);
-    printf("%s", __func__);
+    printf("%s\n", __func__);
 }
 
 // 类的定义，包括析构函数
@@ -173,6 +173,7 @@ static int createClassWithProto(JSContext *ctx)
     JSValue proto = JS_GetClassProto(ctx, js_point_class_id);
     if (JS_IsObject(proto))
     {
+        JS_FreeValue(ctx, proto);
         return 0;
     }
 

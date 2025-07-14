@@ -23,13 +23,16 @@ JSContext *JS_NewCustomContext(JSRuntime *rt)
     js_init_module_std(ctx, "std");
     js_init_module_os(ctx, "os");
     js_init_module_mmath(ctx, "mmath");
+    js_init_module_gui(ctx, "gui");
 
     const char *str = "import * as std from 'std';\n"
                 "import * as os from 'os';\n"
                 "import * as mmath from 'mmath';\n"
+                "import * as gui from 'gui';\n"
                 "globalThis.std = std;\n"
                 "globalThis.os = os;\n"
-                "globalThis.mmath = mmath;\n";
+                "globalThis.mmath = mmath;\n"
+                "globalThis.gui = gui;\n";
     eval_buf(ctx, str, strlen(str), "<input>", JS_EVAL_TYPE_MODULE);
     return ctx;
 }
