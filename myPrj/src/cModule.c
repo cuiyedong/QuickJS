@@ -196,6 +196,7 @@ void my_class_create(JSContext *ctx)
     JSValue global_obj = JS_GetGlobalObject(ctx);
     JSValue point_class = JS_NewCFunction2(ctx, js_point_ctor, "Point", 2, JS_CFUNC_constructor, 0);
     JS_SetPropertyStr(ctx, global_obj, "Point", point_class);
+    JS_FreeValue(ctx, global_obj);
 }
 
 

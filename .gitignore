@@ -3,3 +3,5 @@
 .obj
 .history
 myPrj/build/build/CMakeFiles/*
+.o
+myPrj/build/build/

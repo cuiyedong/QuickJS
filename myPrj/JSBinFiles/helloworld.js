@@ -13,5 +13,8 @@ console.log("mmath var test, pai = ", mmath.pai)
 console.log("selfdef object test:")
 let obj  = new Point(3,4)
 console.log(obj.norm())
+obj.x = 6
+obj.y = 8
+console.log(obj.norm())
 
 console.log("\r\n")

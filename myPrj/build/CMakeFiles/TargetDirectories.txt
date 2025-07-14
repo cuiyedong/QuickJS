@@ -1,3 +1,0 @@
-/home/cuiyd/workspace/milan_OS5/QuickJS/myPrj/build/CMakeFiles/rebuild_cache.dir
-/home/cuiyd/workspace/milan_OS5/QuickJS/myPrj/build/CMakeFiles/edit_cache.dir
-/home/cuiyd/workspace/milan_OS5/QuickJS/myPrj/build/CMakeFiles/qjsMain.dir
