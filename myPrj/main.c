@@ -44,10 +44,9 @@ int main(int argc, char **argv)
     js_load_array(ctx);  // 执行字节码
 
     eval_file(ctx, "../../JSBinFiles/helloworld.js", JS_EVAL_TYPE_MODULE);
-    JS_RunGC(rt);
     eval_file(ctx, "../../JSBinFiles/cCallbackTest.js", JS_EVAL_TYPE_MODULE);
-    freeButtons(ctx);
 
+    freeButtons(ctx);
     JS_RunGC(rt);
 
     // 运行bin文件
